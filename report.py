@@ -130,7 +130,7 @@ class Report(object):
             data2["return_college"]=["东校区","西校区","中校区"]
 
             post_data=session.post(url, data=data2, headers=headers)
-            data = session.get("https://weixine.ustc.edu.cn/2020/apply_total?t=d").text
+            data = session.get("https://weixine.ustc.edu.cn/2020/apply_total?t=23").text
 
             soup = BeautifulSoup(data, 'html.parser')
             date = soup.find(text=pattern)
