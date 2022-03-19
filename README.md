@@ -1,4 +1,5 @@
 # [2021.10更新]中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本
+# 注意该仓库仅为本人用于每日打卡，可能会产生较多无用的commit，如需fork请前往[该项目的镜像](https://github.com/zybao0/USTC-ncov-AutoReport)
 
 ![Auto-report action](https://github.com/Violin9906/USTC-ncov-AutoReport/workflows/Auto-report%20action/badge.svg?branch=master&event=schedule)
 ![School](https://img.shields.io/badge/School-URC-blue.svg)
