@@ -114,7 +114,7 @@ class Report(object):
             print("Report SUCCESSFUL!")
 
             # 离校报备
-            getform = session.get("https://weixine.ustc.edu.cn/2020/apply/daliy")
+            getform = session.get("https://weixine.ustc.edu.cn/2020/apply/daliy/i?t=23")
             data = getform.text
             data = data.encode('ascii','ignore').decode('utf-8','ignore')
             soup = BeautifulSoup(data, 'html.parser')
@@ -127,6 +127,7 @@ class Report(object):
             data2["_token"]=token
             data2["start_date"]=start_date
             data2["end_date"]=end_date
+            data2["return_college"]=["东校区","西校区","中校区"]
 
             post_data=session.post(url, data=data2, headers=headers)
             data = session.get("https://weixine.ustc.edu.cn/2020/apply_total?t=d").text
