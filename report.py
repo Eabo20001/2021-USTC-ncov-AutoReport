@@ -130,7 +130,6 @@ class Report(object):
             data2["t"]="23"
 
             post_data=session.post(url, data=data2, headers=headers)
-            print(post_data.text)
             data = session.get("https://weixine.ustc.edu.cn/2020/apply_total?t=d").text
 
             soup = BeautifulSoup(data, 'html.parser')
