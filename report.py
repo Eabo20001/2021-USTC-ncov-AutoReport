@@ -42,7 +42,7 @@ def recognize_text(img):
     return text
 
 class Report(object):
-    def __init__(self, stuid, password, data_path,dorm):
+    def __init__(self, stuid, password, data_path, dorm):
         self.stuid = stuid
         self.password = password
         self.data_path = data_path
@@ -72,7 +72,7 @@ class Report(object):
             data = f.read()
             data = json.loads(data)
             data["_token"]=token
-            data["dorm"]=self.drom
+            data["dorm"]=self.dorm
 
 
         headers = {
