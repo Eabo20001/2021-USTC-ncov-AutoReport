@@ -33,4 +33,4 @@ jobs:
         PASSWORD: ${{ secrets.Password }}
         DORM: ${{ secrets.Dorm }}
       run: |
-        python report.py data.json "$STUID" "$PASSWORD" "$Dorm"
+        python report.py data.json "$STUID" "$PASSWORD" "$DORM"
