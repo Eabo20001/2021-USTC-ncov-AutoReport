@@ -90,24 +90,9 @@ class Report(object):
         url = "https://weixine.ustc.edu.cn/2020/daliy_report"
 
         post_data=session.post(url, data=data, headers=headers)
+        flag = True if post_data.text.find("上报成功")!=-1 else False
 
-        data = session.get("http://weixine.ustc.edu.cn/2020").text
-
-        soup = BeautifulSoup(data, 'html.parser')
         pattern = re.compile("[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}")
-        token = soup.find(
-            "span", {"style": "position: relative; top: 5px; color: #666;"})
-        flag = False
-        if pattern.search(token.text) is not None:
-            date = pattern.search(token.text).group()
-            print("Latest report: " + date)
-            date = date + " +0800"
-            reporttime = datetime.datetime.strptime(date, "%Y-%m-%d %H:%M:%S %z")
-            timenow = datetime.datetime.now(pytz.timezone('Asia/Shanghai'))
-            delta = timenow - reporttime
-            print("{} second(s) before.".format(delta.seconds))
-            if delta.seconds < 120:
-                flag = True
         if flag == False:
             print("Report FAILED!")
         else:
