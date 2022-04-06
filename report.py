@@ -129,6 +129,7 @@ class Report(object):
             data2["start_date"]=start_date
             data2["end_date"]=end_date
             data2["return_college[]"]=["东校区","西校区","中校区"]
+            data2["reason"]="上课"
             data2["t"]="23"
 
             post_data=session.post(url, data=data2, headers=headers)
